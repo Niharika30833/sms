@@ -1,0 +1,114 @@
+{% extends 'coursenavbar.html' %}
+
+{% block body %}
+
+<h2 align="center" style="color:red">{{msg}}</h2>
+
+<h3 align="center"><u>Add Student</u></h3>
+
+<br>
+
+<form method="post" action="{% url 'addstudent' %}">
+    {% csrf_token %}
+    <table align="center" width="40%" height="50%">
+
+         <tr>
+            <td><label>Enter Student ID</label></td>
+            <td>
+                <input type="text" name="studentid" required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter Fullname</label></td>
+            <td>
+                <input type="text" name="fullname"   required>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td><label>Select Gender</label></td>
+            <td>
+                <select name="gender" required>
+                    <option value="">--Select--</option>
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td><label>department</label></td>
+            <td>
+                <select name="department" required>
+                    <option value="">--Select--</option>
+                    <option value="CSE(Regulars)">CSE(Regulars)</option>
+                    <option value="CSE(HONORS)">CSE(HONORS)</option>
+                    <option value="CSIT">CSIT</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Select Program</label></td>
+            <td>
+                <select name="program" required>
+                    <option value="">--Select--</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Select Semester</label></td>
+            <td>
+                <select name="semester" required>
+                    <option value="">--Select--</option>
+                    <option value="ODD">ODD SEM</option>
+                    <option value="EVEN">EVEN SEM</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Enter Year</label></td>
+            <td>
+                <input type="number" name="year" min="1" max="4" required>
+            </td>
+        </tr>
+
+
+         <tr>
+            <td><label>Enter password</label></td>
+            <td>
+                <input type="password" name="password"   required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter email</label></td>
+            <td>
+                <input type="email" name="email"   required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter contact</label></td>
+            <td>
+                <input type="text" name="contact"   required>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Add" class="coursebutton"></td>
+            <td><input type="reset" value="clear" class="coursebutton"></td>
+        </tr>
+    </table>
+
+</form>
+
+{% endblock %}

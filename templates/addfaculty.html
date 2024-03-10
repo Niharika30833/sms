@@ -1,0 +1,110 @@
+{% extends 'coursenavbar.html' %}
+
+{% block body %}
+
+<h2 align="center" style="color:red">{{msg}}</h2>
+
+<h3 align="center"><u>Add Faculty</u></h3>
+
+<br>
+
+<form method="post" action="{% url 'addfaculty' %}">
+    {% csrf_token %}
+    <table align="center" width="40%" height="50%">
+
+         <tr>
+            <td><label>Enter Faculty ID</label></td>
+            <td>
+                <input type="text" name="facultyid" required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter Fullname</label></td>
+            <td>
+                <input type="text" name="fullname"   required>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td><label>Select Gender</label></td>
+            <td>
+                <select name="gender" required>
+                    <option value="">--Select--</option>
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td><label>department</label></td>
+            <td>
+                <select name="department" required>
+                    <option value="">--Select--</option>
+                    <option value="CSE(Regulars)">CSE(Regulars)</option>
+                    <option value="CSE(HONORS)">CSE(HONORS)</option>
+                    <option value="CSIT">CSIT</option>
+                </select>
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td><label>Select Qualification</label></td>
+            <td>
+                <select name="qualification" required>
+                    <option value="">--Select--</option>
+                    <option value="B.Tech">M.Tech</option>
+                     <option value="B.Tech">PHD</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Select designation</label></td>
+            <td>
+                <select name="designation" required>
+                    <option value="">--Select--</option>
+                    <option value="professor">professor</option>
+                    <option value="associate professor">associate professor</option>
+                     <option value="assistant professor">assistant professor</option>
+                </select>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter password</label></td>
+            <td>
+                <input type="password" name="password"   required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter email</label></td>
+            <td>
+                <input type="email" name="email"   required>
+            </td>
+        </tr>
+
+         <tr>
+            <td><label>Enter contact</label></td>
+            <td>
+                <input type="text" name="contact"   required>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Add" class="coursebutton"></td>
+            <td><input type="reset" value="clear" class="coursebutton"></td>
+        </tr>
+    </table>
+
+</form>
+
+{% endblock %}

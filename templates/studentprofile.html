@@ -1,0 +1,63 @@
+{% extends 'studentnavbar.html' %}
+{% load static %}
+
+{% block body %}
+<style>
+    body {
+        margin: 70px;
+        padding: 40px;
+        background: url('{% static "images/bg3.avif" %}') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+    }
+
+    .container .col {
+        box-sizing: border-box;
+        padding: 2px; /* Adjust the padding for space within the outline */
+    }
+
+    .col1 {
+        width: 30%;
+        height: 80vh; /* Set the height to 100% of the viewport height */
+        border: 2px solid #000;
+    }
+
+    .col2 {
+        width: 70%;
+        height: 80vh; /* Set the height to 100% of the viewport height */
+        border: 2px solid #000;
+    }
+  </style>
+
+<body>
+<div class="container text-center">
+    <div class="col col1" style="background-color:white;">
+        <br><br><h1 style="color: red;">PROFILE</h1><br><br>
+        <center>
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="gold" class="bi bi-person" style="outline: 2px solid gold;" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+            </svg>
+        </center><br>
+
+        {% if student %}
+            <p>Username: {{ user.username }}</p>
+            <p>Full Name: {{ student.fullname }}</p>
+            <p>Gender: {{ student.gender }}</p>
+            <p>Department: {{ student.department }}</p>
+            <p>Program: {{ student.program }}</p>
+            <p>Semester: {{ student.semester }}</p>
+            <p>Year Of Study: {{ student.year }}</p>
+            <p>Email: {{ student.email }}</p>
+            <p>Contact: {{ student.contact }}</p>
+        {% else %}
+            <p>No profile details found.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
